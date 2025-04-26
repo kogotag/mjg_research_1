@@ -18,9 +18,15 @@
     <ClCompile Include="mjg_research_1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="read_env.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point2D.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="read_env.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

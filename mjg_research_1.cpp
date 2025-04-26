@@ -4,9 +4,8 @@
 #include <array>
 #include <vector>
 #include "Point2D.h"
-
-const std::string pointsFileName = "Airfoil for OpenVSP.dat";
-const std::string pointsFilePath = "C:\\Users\\kogot\\Documents\\ssau\\mjg\\research";
+#include "read_env.h"
+#include <filesystem>
 
 std::array<int, 2> readSize(std::string sizeLine) {
     std::array<int, 2> res;
@@ -45,6 +44,17 @@ std::array<int, 2> readSize(std::string sizeLine) {
 
 int main()
 {
+    // Файл с настройками
+    std::map<std::string, std::string> env = ReadEnv();
+
+    // Путь к папке программы
+    std::string pointsFilePath = std::filesystem::current_path().string();
+
+    // Название файла с данными, задаётся в файле .env
+    // Пример: DATA_FILENAME='Airfoil for OpenVSP.dat'
+    std::string pointsFileName = env["DATA_FILENAME"];
+
+    // Поток чтения из файла
     std::ifstream pointsFileReadStream(pointsFilePath + "\\" + pointsFileName);
     
     std::string line;
@@ -69,6 +79,4 @@ int main()
     }
 
     pointsFileReadStream.close();
-
-    std::cout << "Hello World!\n";
 }
