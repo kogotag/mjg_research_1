@@ -129,10 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="mjg_research_1.cpp" />
+    <ClCompile Include="Point2D.cpp" />
+    <ClCompile Include="read_data.cpp" />
     <ClCompile Include="read_env.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point2D.h" />
+    <ClInclude Include="read_data.h" />
     <ClInclude Include="read_env.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
